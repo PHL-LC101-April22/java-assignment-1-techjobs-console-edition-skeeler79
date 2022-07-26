@@ -125,11 +125,9 @@ public class TechJobs {
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
         if (someJobs.size() == 0){
             System.out.println("No Results");
+
         }
         for (HashMap<String, String> job : someJobs) {
-//            if (someJobs.size() == 0 || someJobs.equals("\n")){
-//                System.out.println("No Results");
-//            }
             System.out.println("\n*****");
             for (Map.Entry<String, String> column : job.entrySet()) {
                 System.out.println(String.format("%s: %s", column.getKey(), column.getValue()) ) ;
