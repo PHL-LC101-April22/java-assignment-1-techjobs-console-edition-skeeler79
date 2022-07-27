@@ -61,6 +61,10 @@ public class TechJobs {
                 System.out.println("\nSearch term:");
                 String searchTerm = in.nextLine();
 
+//                if (JobData.findByValue(searchTerm).size() == 0){
+//                    System.out.println("No Results");
+//
+//                }
                 if (searchField.equals("all")) {
                     printJobs(JobData.findByValue(searchTerm));
                 } else {
@@ -119,7 +123,20 @@ public class TechJobs {
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
+        if (someJobs.size() == 0){
+            System.out.printf("No Results");
 
-        System.out.println("printJobs is not implemented yet");
+        }
+        for (HashMap<String, String> job : someJobs) {
+            System.out.println("\n*****");
+            for (Map.Entry<String, String> column : job.entrySet()) {
+                System.out.println(String.format("%s: %s", column.getKey(), column.getValue()) ) ;
+
+            }
+            System.out.println("*****");
+        }
+
+        }
+
     }
-}
+
